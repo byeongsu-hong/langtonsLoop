@@ -9,8 +9,11 @@ html, body {
 }
 
 canvas {
+    width : 1000px;
+    height : 1000px;
     border : solid 2px #fff;
     background-color : #333;
+    image-rendering: pixelated;
 }
 
 .content {

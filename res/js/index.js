@@ -7,6 +7,9 @@ function init() {
     Canvas.setAttribute("width", WIDTH + "");
     Canvas.setAttribute("height", HEIGHT + "");
 
+    initFloor();
+    initPatternToFloor(parseInt(WIDTH / 2) - 5, parseInt(HEIGHT / 2) - 5);
+
     window.setInterval(render, SPEED);
 }
 
@@ -14,6 +17,9 @@ function init() {
 function render(){
     var context = Canvas.getContext('2d');
 
-    context.fillStyle = "lightgreen";
-    context.fillRect(2, 2, 1, 1);
+    var temp = [[]];
+    duplicateFloor(temp);
+
+    drawFloor(context);
+    nextGen(temp);
 }
