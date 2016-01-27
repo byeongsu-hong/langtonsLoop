@@ -10,6 +10,7 @@ function init() {
     initFloor();
     initPatternToFloor(parseInt(WIDTH / 2) - 5, parseInt(HEIGHT / 2) - 5);
 
+    render();
     window.setInterval(render, SPEED);
 }
 

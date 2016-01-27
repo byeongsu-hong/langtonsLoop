@@ -43,8 +43,6 @@ function drawFloor(context) {
         for(var y = 0; y < Floor[x].length; y++) {
             var cell = Floor[x][y];
 
-            if(cell.stat == 0) { continue }
-
             context.fillStyle = COLORS[cell.stat];
             context.fillRect(cell.posx, cell.posy, 1, 1);
         }
@@ -56,7 +54,9 @@ function duplicateFloor(temp) {
         var arrayX = [];
 
         for(var y = 0; y < Floor[x].length; y++) {
-            arrayX[y] = Floor[x][y];
+            var cell = Floor[x][y];
+
+            arrayX[y] = new Cell(cell.posx, cell.posy, cell.stat);
         }
 
         temp[x] = arrayX;

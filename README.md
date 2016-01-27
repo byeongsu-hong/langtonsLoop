@@ -41,11 +41,12 @@
 022222222222220  
 
 밑에 나열된 규칙들은 이렇게 이해하면 된다.
-[ 북, 서, 중, 동, 남, 결과 ]
+[ 중, [이웃들의 상태] , 결과 ]
+
+랭턴의 루프는 이웃을 정의하는 방식으로 폰 노이만 이웃 방식을 사용하므로,
+이웃들의 상태는 4개가 된다.
 
 맨 마지막에 있는 결과는 옆의 5가지 경우를 만족하는 경우, 결과에 있는 숫자로 중앙세포의 상태가 변화한다.
-
-This models an array of 8-state cells on a regular Cartesian grid. Synchronously, all cells update to a new set according to a rule table and their own present state & the four neighbour states.. this is four-fold symmetrical, so one rule that states '1 2345 6'is interpreted to mean that a cell currently in state 1, & with neighbours 2345 will become state 6- but so, in the other three compass directions, will '1 3452 6', '1 4523 6' and ' 1 5234 6'. This makes the rule table more comapact. A kind of 'genetic code' circulates in each loop, and as the 'genes' arrive at the active site they govern how it extends. The two main genes are one to extend and sheathe the core, and one to turn a right angle corner. The other states allow termination & disconnection of completed loops.
 
 000000
 000012
