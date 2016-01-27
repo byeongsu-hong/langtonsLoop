@@ -31,11 +31,34 @@ function checkPattern(cell, temp) {
         var condition = CONDITIONS[i];
 
         if(condition[0] == temp[cell.posx][cell.posy].stat) {
-            if (condition[1] == temp[cell.posx][up].stat &&
-                condition[2] == temp[lt][cell.posy].stat &&
-                condition[3] == temp[rt][cell.posy].stat &&
-                condition[4] == temp[cell.posx][dw].stat) {
-                cell.stat = condition[5];
+            for(var j = 1; j <= 4; j++) {
+                if (condition[1] == temp[cell.posx][up].stat &&
+                    condition[2] == temp[lt][cell.posy].stat &&
+                    condition[3] == temp[rt][cell.posy].stat &&
+                    condition[4] == temp[cell.posx][dw].stat) {
+                    cell.stat = condition[5];
+                }
+
+                if (condition[2] == temp[cell.posx][up].stat &&
+                    condition[3] == temp[lt][cell.posy].stat &&
+                    condition[4] == temp[rt][cell.posy].stat &&
+                    condition[1] == temp[cell.posx][dw].stat) {
+                    cell.stat = condition[5];
+                }
+
+                if (condition[3] == temp[cell.posx][up].stat &&
+                    condition[4] == temp[lt][cell.posy].stat &&
+                    condition[1] == temp[rt][cell.posy].stat &&
+                    condition[2] == temp[cell.posx][dw].stat) {
+                    cell.stat = condition[5];
+                }
+
+                if (condition[4] == temp[cell.posx][up].stat &&
+                    condition[1] == temp[lt][cell.posy].stat &&
+                    condition[2] == temp[rt][cell.posy].stat &&
+                    condition[3] == temp[cell.posx][dw].stat) {
+                    cell.stat = condition[5];
+                }
             }
         }
     }
