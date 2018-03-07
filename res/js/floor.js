@@ -37,14 +37,17 @@ function logFloor(floor) {
 }
 
 function drawFloor(context) {
+    var floor = Floor;
     context.clearRect(0, 0, WIDTH, HEIGHT);
 
-    for(var x = 0; x < Floor.length; x++) {
-        for(var y = 0; y < Floor[x].length; y++) {
-            var cell = Floor[x][y];
+    for(var x = 0; x < floor.length; x++) {
+        for(var y = 0; y < floor[x].length; y++) {
+            var cell = floor[x][y];
 
-            context.fillStyle = COLORS[cell.stat];
-            context.fillRect(cell.posx, cell.posy, 1, 1);
+            if(cell.stat !== "0") {
+                context.fillStyle = COLORS[cell.stat];
+                context.fillRect(cell.posx, cell.posy, 1, 1);
+            }
         }
     }
 }

@@ -3,12 +3,24 @@
  */
 
 // 수정금지!
-var Canvas = document.getElementById('test');
+var Canvas = document.getElementById('canvas');
 
 // canvas 픽셀수를 설정해준다. 되도록이면 정사각형 모양을 추천한다. (홀수)
 var WIDTH = 101;
 var HEIGHT = 101;
-var SPEED = 10;
+var SPEED = 100;
+
+// 색들.
+var COLORS = [
+    "black",
+    "#64FFDA",
+    "#3D5AFE",
+    "#84FFFF",
+    "#EEFF41",
+    "#9C27B0",
+    "white",
+    "#03A9F4"
+];
 
 /*
 0 - 죽음
@@ -16,6 +28,8 @@ var SPEED = 10;
  */
 
 //초기화 배열
+//Langton's Loop
+
 var INITPTN = [
     "022222222",
     "2170140142",
@@ -60,26 +74,16 @@ var CONDITIONS = [
     "702321", "702525", "702720"
 ];
 
-// 색들.
-var COLORS = [
-    "black",
-    "blue",
-    "red",
-    "green",
-    "yellow",
-    "rgb(252, 40, 252)",
-    "white",
-    "rgb(45, 255, 254)"
-];
-
-//var INITPTN = [
+// // Byl loop rules
+//
+// var INITPTN = [
 //    "022",
 //    "2312",
 //    "2342",
 //    "025"
-//];
+// ];
 //
-//var CONDITIONS = [     // Byl loop rules
+// var CONDITIONS = [
 //    "000000", "000010", "000031", "000420", "000110",
 //    "000120", "000311", "000330", "000320", "000200", "000242",
 //    "000233", "004330", "005120", "001400", "001120",
@@ -107,4 +111,4 @@ var COLORS = [
 //    "212052", "212055", "212022", "230052", "234022",
 //    "235002", "235022", "232042", "232022", "220042", "220020",
 //    "220533", "221552"
-//];
+// ];
